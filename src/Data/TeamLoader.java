@@ -39,7 +39,7 @@ public class TeamLoader {
 	            //Se obtiene el elemento 'tabla'
 	            Element item = (Element) list.get(i);
 	            String n = (item.getChild("name").getValue());
-	            teams.add(new Team(i+1,n));
+	            teams.add(new Team(i,n));
 	        }
 	    }catch ( IOException io ) {
 	        System.out.println( io.getMessage() );

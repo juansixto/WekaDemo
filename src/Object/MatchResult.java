@@ -1,7 +1,9 @@
 package Object;
 
 public class MatchResult {
-	
+	private static String HOME = "Home";
+	private static String DRAW = "Draw";	
+	private static String VISITOR = "Visitor";	
 	private int goals1 = 0;
 	private int goals2 = 0;
 	private String sign = "X";
@@ -42,10 +44,16 @@ public class MatchResult {
 		return sign;
 	}
 	
+	public String getReverseSign() {
+		if(sign == HOME) return VISITOR;
+		else if(sign == VISITOR) return HOME;
+		else return DRAW;
+	}
+	
 	public void calculateSign(){
-		if(goals1 > goals2) this.sign = "1";
-		else if(goals2 > goals1) this.sign = "2";
-		else this.sign = "X";
+		if(goals1 > goals2) this.sign = HOME;
+		else if(goals2 > goals1) this.sign = VISITOR;
+		else this.sign = DRAW;
 		
 	}
 

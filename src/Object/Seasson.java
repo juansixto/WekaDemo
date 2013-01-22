@@ -2,6 +2,9 @@ package Object;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import Data.MatchesLoader;
@@ -60,10 +63,29 @@ public class Seasson {
 	public void LoadMatches(){
 		MatchesLoader myML = new MatchesLoader(this.teams_1);
 		this.league1 = myML.Load(RESULTS);
-			
+		RefreshResults();
+	}
+
+	public void RefreshResults(){
+		for(int i=0; i< league1.size();i++){
+			Journey j = league1.get(i);
+			for(int h=0; h<j.getMatches().size(); h++)
+			{
+				Match m = j.getMatches().get(h);
+				teams_1.get(m.getHomeTeam().getId()).addMatch(m.getResult().getGoals1(), m.getResult().getGoals2());
+				teams_1.get(m.getVisitTeam().getId()).addMatch(m.getResult().getGoals2(), m.getResult().getGoals1());
+			}
+		}
+		Collections.sort(teams_1);
+		Iterator it = teams_1.iterator();
+		while(it.hasNext()){
+			Team t = (Team) it.next();
+			System.out.println(t.getName()+"	"+t.getPoints()+"	"+t.getDifference());
+		}
+		
 	}
 	public void generateWeka() throws IOException{
-		this.weka = new WekaGenerator();
+		this.weka = new WekaGenerator(teams_1);
 		for(int i=0; i< this.league1.size();i++){
 			Journey j = league1.get(i);
 			for(int h=0; h< j.getMatches().size();h++){
@@ -73,5 +95,6 @@ public class Seasson {
 		}
 		this.weka.Close();
 	}
+
 
 }
