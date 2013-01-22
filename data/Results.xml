@@ -29,7 +29,7 @@
 		<games>
 			<home>14</home>
 			<visitor>9</visitor>
-			<result></result>
+			<result>0-0</result>
 		</games>
 		<games>
 			<home>6</home>
@@ -39,7 +39,7 @@
 		<games>
 			<home>18</home>
 			<visitor>19</visitor>
-			<result></result>
+			<result>0-1</result>
 		</games>
 		<games>
 			<home>5</home>
@@ -137,7 +137,7 @@
 		</games>
 		<games>
 			<home>20</home>
-			<visitor>15	</visitor>
+			<visitor>15</visitor>
 			<result>0-0</result>
 		</games>
 		<games>

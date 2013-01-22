@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
+
 
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -33,7 +33,7 @@ public class TeamLoader {
 	        Element rootNode = document.getRootElement();
 	 
 	        //Se obtiene la lista de hijos de la raiz 'Item'
-	        List list = rootNode.getChildren( "team" );
+	        List<Element> list = rootNode.getChildren( "team" );
 	        for ( int i = 0; i < list.size(); i++ )
 	        {
 	            //Se obtiene el elemento 'tabla'
