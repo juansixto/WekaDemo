@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <results>
+		<season num="20">
+		<games>
+			<home>12</home>
+			<visitor>6</visitor>
+			<result>3-2</result>
+		</games>
+		<games>
+			<home>1</home>
+			<visitor>4</visitor>
+			<result>2-0</result>
+		</games>
+		<games>
+			<home>19</home>
+			<visitor>7</visitor>
+			<result>1-1</result>
+		</games>
+		<games>
+			<home>9</home>
+			<visitor>13</visitor>
+			<result>2-0</result>
+		</games>
+		<games>
+			<home>10</home>
+			<visitor>3</visitor>
+			<result>0-5</result>
+		</games>
+		<games>
+			<home>11</home>
+			<visitor>18</visitor>
+			<result>1-1</result>
+		</games>
+		<games>
+			<home>2</home>
+			<visitor>8</visitor>
+			<result>1-1</result>
+		</games>
+		<games>
+			<home>15</home>
+			<visitor>5</visitor>
+			<result>3-2</result>
+		</games>
+		<games>
+			<home>20</home>
+			<visitor>17</visitor>
+			<result>2-0</result>
+		</games>
+		<games>
+			<home>16</home>
+			<visitor>14</visitor>
+			<result>2-1</result>
+		</games>
+	</season>
 		<season num="16">
 		<games>
 			<home>10</home>
