@@ -1,0 +1,21 @@
+JORNADA 1	
+Barcelona	R. Sociedad
+5-1
+Levante	Atlético
+1-1
+Athletic	Betis
+3-5
+Zaragoza	Valladolid
+0-1
+R. Madrid	Valencia
+1-1
+Celta	Málaga
+0-1
+Sevilla	Getafe
+2-1
+Mallorca	Espanyol
+2-1
+Rayo	Granada
+1-0
+Deportivo	Osasuna
+2-0

@@ -2,7 +2,7 @@
 	<teams>
 		<team>
 			<id>1</id>
-			<name>Atletico</name>
+			<name>Atlético</name>
 		</team>
 		<team>
 			<id>2</id>
@@ -10,7 +10,7 @@
 		</team>
 		<team>
 			<id>3</id>
-			<name>RealMadrid</name>
+			<name>R. Madrid</name>
 		</team>
 		<team>
 			<id>4</id>
@@ -42,11 +42,11 @@
 		</team>
 		<team>
 			<id>11</id>
-			<name>Malaga</name>
+			<name>Málaga</name>
 		</team>
 		<team>
 			<id>12</id>
-			<name>RealSociedad</name>
+			<name>R. Sociedad</name>
 		</team>
 		<team>
 			<id>13</id>
@@ -58,7 +58,7 @@
 		</team>
 		<team>
 			<id>15</id>
-			<name>Espanol</name>
+			<name>Espanyol</name>
 		</team>
 		<team>
 			<id>16</id>

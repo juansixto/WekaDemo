@@ -16,6 +16,7 @@ public class Seasson {
 	private List<Team> teams_2;
 	private final static String TEAMS1_PATH = "data/1_Teams.xml";
 	private final static String TEAMS2_PATH = "data/2_Teams.xml";
+	private final static int ANTECEDENTS = 5;
 	private final static String RESULTS = "data/Results.xml";
 	private List<Journey> league1;
 	private List<Journey> league2;
@@ -48,11 +49,11 @@ public class Seasson {
 		return this.teams_2.get(index);
 	}
 	public void addTeam1(Team t){
-		t.setId(teams_1.size()+1);
+		t.setId(teams_1.size());
 		this.teams_1.add(t);
 	}
 	public void addTeam2(Team t){
-		t.setId(teams_2.size()+1);
+		t.setId(teams_2.size());
 		this.teams_2.add(t);
 	}
 	public void LoadTeams(){
@@ -65,16 +66,32 @@ public class Seasson {
 		this.league1 = myML.Load(RESULTS);
 		RefreshResults();
 	}
+	public int getTeamId(String name){
+		int resp= 0;
+		for(int i = 0; i< teams_1.size();i++){
+			if(teams_1.get(i).getName().equals(name)){
+				resp = teams_1.get(i).getId();
+			}
+		}
+		for(int i = 0; i< teams_2.size();i++){
+			if(teams_2.get(i).getName().equals(name)){
+				resp = teams_2.get(i).getId();
+			}
+		}
+		return resp;
+	}
 
 	public void RefreshResults(){
 		for(int i=0; i< league1.size();i++){
 			Journey j = league1.get(i);
-			for(int h=0; h<j.getMatches().size(); h++)
-			{
-				Match m = j.getMatches().get(h);
-				teams_1.get(m.getHomeTeam().getId()).addMatch(m.getResult().getGoals1(), m.getResult().getGoals2());
-				teams_1.get(m.getVisitTeam().getId()).addMatch(m.getResult().getGoals2(), m.getResult().getGoals1());
-			}
+			
+				for(int h=0; h<j.getMatches().size(); h++)
+				{
+					Match m = j.getMatches().get(h);
+					teams_1.get(m.getHomeTeam().getId()-1).addMatch(m.getResult().getGoals1(), m.getResult().getGoals2());
+					teams_1.get(m.getVisitTeam().getId()-1).addMatch(m.getResult().getGoals2(), m.getResult().getGoals1());
+				}
+			
 		}
 		Collections.sort(teams_1);
 		Iterator it = teams_1.iterator();
@@ -88,12 +105,32 @@ public class Seasson {
 		this.weka = new WekaGenerator(teams_1);
 		for(int i=0; i< this.league1.size();i++){
 			Journey j = league1.get(i);
-			for(int h=0; h< j.getMatches().size();h++){
-				Match m = j.getMatches().get(h);
-				this.weka.Write(m, j.getNumber());
+	
+				for(int h=0; h< j.getMatches().size();h++){
+					Match m = j.getMatches().get(h);
+					this.weka.Write(m, j.getNumber());
+				
 			}
 		}
 		this.weka.Close();
+	}
+	public void generateAntecedents(){
+		for(int i=0; i< this.league1.size();i++){
+			Journey j = league1.get(i);
+			for(int h=0; h< j.getMatches().size();h++){
+				Match m = j.getMatches().get(h);
+				Team home = m.getHomeTeam();
+				Team visitor = m.getVisitTeam();
+				int HomeAntecedent = 0;
+				int VisitorAntecedent = 0;
+				for(int k=0; k<ANTECEDENTS; k++){
+					if(league1.get(i-1) != null){
+						System.out.println("Existe!");
+					}
+				}
+				
+			}
+		}
 	}
 
 

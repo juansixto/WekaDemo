@@ -39,5 +39,6 @@ public class Journey {
 	public void addMatch(Match m){
 		this.matches.add(m);
 	}
+	
 
 }
