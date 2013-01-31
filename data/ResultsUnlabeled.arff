@@ -1,0 +1,39 @@
+@relation WekaDemo
+
+@attribute team {Barcelona,Atlético,R.Madrid,Málaga,Betis,Rayo,Levante,Valencia,R.Sociedad,Valladolid,Sevilla,Getafe,Athletic,Zaragoza,Espanyol,Celta,Granada,Osasuna,Mallorca,Deportivo,Elche,Almería,Girona,Alcorcón,BarcelonaB,Córdoba,LasPalmas,Villarreal,Sabadell,Lugo,Ponferradina,Recreativo,Numancia,Sporting,Murcia,RMCastilla,Guadalajara,Mirandés,Huesca,Xerez,Hércules,Racing,}
+@attribute visitor {Barcelona,Atlético,R.Madrid,Málaga,Betis,Rayo,Levante,Valencia,R.Sociedad,Valladolid,Sevilla,Getafe,Athletic,Zaragoza,Espanyol,Celta,Granada,Osasuna,Mallorca,Deportivo,Elche,Almería,Girona,Alcorcón,BarcelonaB,Córdoba,LasPalmas,Villarreal,Sabadell,Lugo,Ponferradina,Recreativo,Numancia,Sporting,Murcia,RMCastilla,Guadalajara,Mirandés,Huesca,Xerez,Hércules,Racing,}
+@attribute home_points NUMERIC
+@attribute home_diff NUMERIC
+@attribute home_wins NUMERIC
+@attribute home_draws NUMERIC
+@attribute home_loses NUMERIC
+@attribute visitor_points NUMERIC
+@attribute visitor_diff NUMERIC
+@attribute visitor_wins NUMERIC
+@attribute visitor_draws NUMERIC
+@attribute visitor_loses NUMERIC
+@attribute home_historial NUMERIC
+@attribute visitor_historial NUMERIC
+@attribute result {WIN,DRAW,LOOSE}
+
+@data
+Atlético,Betis,48,21,15,3,4,36,-2,11,3,8,8,8,?
+Betis,Atlético,36,-2,11,3,8,48,21,15,3,4,8,8,?
+Málaga,Zaragoza,36,14,10,6,6,24,-9,7,3,12,5,2,?
+Zaragoza,Málaga,24,-9,7,3,12,36,14,10,6,6,2,5,?
+R.Sociedad,Mallorca,31,4,8,7,7,18,-17,4,6,12,6,2,?
+Mallorca,R.Sociedad,18,-17,4,6,12,31,4,8,7,7,2,6,?
+Osasuna,Celta,19,-9,4,7,11,21,-5,5,6,11,5,6,?
+Celta,Osasuna,21,-5,5,6,11,19,-9,4,7,11,6,5,?
+Valencia,Barcelona,34,-4,10,4,8,59,47,19,2,1,10,10,?
+Barcelona,Valencia,59,47,19,2,1,34,-4,10,4,8,10,10,?
+Getafe,Deportivo,27,-10,7,6,9,17,-19,3,8,11,3,5,?
+Deportivo,Getafe,17,-19,3,8,11,27,-10,7,6,9,5,3,?
+Granada,R.Madrid,21,-14,5,6,11,44,34,13,5,4,5,11,?
+R.Madrid,Granada,44,34,13,5,4,21,-14,5,6,11,11,5,?
+Sevilla,Rayo,27,-2,7,6,9,35,-6,11,2,9,8,10,?
+Rayo,Sevilla,35,-6,11,2,9,27,-2,7,6,9,10,8,?
+Espanyol,Levante,23,-9,5,8,9,34,-4,10,4,8,8,7,?
+Levante,Espanyol,34,-4,10,4,8,23,-9,5,8,9,7,8,?
+Valladolid,Athletic,29,3,8,5,9,26,-13,7,5,10,7,5,?
+Athletic,Valladolid,26,-13,7,5,10,29,3,8,5,9,5,7,?

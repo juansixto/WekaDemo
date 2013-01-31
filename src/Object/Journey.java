@@ -8,11 +8,19 @@ public class Journey {
 	private int number = 0;
 	private Date date;
 	private List<Match> matches;
+	private List<Team> teams;
 	
-	public Journey(int n){
+	public Journey(int n, List<Team> t){
 		this.number = n;
 		this.matches = new ArrayList<>();
+		this.teams = t;
 	}	
+	public List<Team> getTeams() {
+		return teams;
+	}
+	public void setTeams(List<Team> teams) {
+		this.teams = teams;
+	}
 	public int getNumber() {
 		return number;
 	}
@@ -38,6 +46,20 @@ public class Journey {
 	}
 	public void addMatch(Match m){
 		this.matches.add(m);
+	}
+	public void RefreshResults(){
+			for(int h=0; h<matches.size(); h++)
+				{
+					Match m = matches.get(h);
+					if(m.getHomeTeam().getId()<21){
+						teams.get(m.getHomeTeam().getId()-1).addMatch(m.getResult().getGoals1(), m.getResult().getGoals2());
+						teams.get(m.getVisitTeam().getId()-1).addMatch(m.getResult().getGoals2(), m.getResult().getGoals1());
+						}
+					else {
+						teams.get(m.getHomeTeam().getId()-21).addMatch(m.getResult().getGoals1(), m.getResult().getGoals2());
+						teams.get(m.getVisitTeam().getId()-21).addMatch(m.getResult().getGoals2(), m.getResult().getGoals1());
+						}	
+				}
 	}
 	
 

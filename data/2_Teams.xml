@@ -2,11 +2,11 @@
 	<teams>
 		<team>
 		<id>21</id>
-		<name>Alcorcon</name>
+		<name>Alcorcón</name>
 		</team>
 		<team>
 		<id>22</id>
-		<name>Sabadell </name>
+		<name>Sabadell</name>
 		</team>
 		<team>
 		<id>23</id>
@@ -18,7 +18,7 @@
 		</team>
 		<team>
 		<id>25</id>
-		<name>Mirandes</name>
+		<name>Mirandés</name>
 		</team>
 		<team>
 		<id>26</id>
@@ -26,7 +26,7 @@
 		</team>
 		<team>
 		<id>27</id>
-		<name>Cordoba</name>
+		<name>Córdoba</name>
 		</team>
 		<team>
 		<id>28</id>
@@ -42,7 +42,7 @@
 		</team>
 		<team>
 		<id>31</id>
-		<name>Hercules</name>
+		<name>Hércules</name>
 		</team>
 		<team>
 		<id>32</id>
@@ -50,7 +50,7 @@
 		</team>
 		<team>
 		<id>33</id>
-		<name>Castilla</name>
+		<name>RM Castilla</name>
 		</team>
 		<team>
 		<id>34</id>
@@ -74,7 +74,7 @@
 		</team>
 		<team>
 		<id>39</id>
-		<name>Almeria</name>
+		<name>Almería</name>
 		</team>
 		<team>
 		<id>40</id>

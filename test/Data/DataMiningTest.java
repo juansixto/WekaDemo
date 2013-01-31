@@ -18,7 +18,7 @@ public class DataMiningTest {
 		ss = new Seasson();
 		ss.LoadTeams();
 		dm = new DataMining(ss);
-		dm.Extract();
+		dm.ExtractUnlabeled();
 	}
 
 }

@@ -9,6 +9,7 @@ public class Team implements Comparable{
 	private int loses;
 	private int GL;
 	private int GV;
+	private int[] Historic;
 	
 	
 	public Team(int i, String n){
@@ -20,6 +21,13 @@ public class Team implements Comparable{
 		this.loses = 0;
 		this.GL = 0;
 		this.GV = 0;
+		this.Historic = new int[40];
+	}
+	public int[] getHistoric() {
+		return Historic;
+	}
+	public void setHistoric(int[] historic) {
+		Historic = historic;
 	}
 	public Team(String n){
 		this.name = n;
@@ -73,12 +81,16 @@ public class Team implements Comparable{
 		this.GL += f;
 		this.GV += c;
 		if(f>c){
-		this.points += 3;
-		this.wins += 1; }
+			this.Historic[wins+draws+loses] = 3;
+			this.points += 3;
+			this.wins += 1; 
+		}
 		else if (c>f){
+			this.Historic[wins+draws+loses] = 0;
 			this.loses += 1;
 		}
 		else {
+			this.Historic[wins+draws+loses] = 1;
 			this.points += 1;
 			this.draws +=1;
 		}
@@ -97,6 +109,14 @@ public class Team implements Comparable{
 	      else return t2.getDifference()-getDifference();
 		
 	}
+	public int getHistoric(int jor){
+		int resp = 0;
+		for(int i= 0; i<jor; i++){
+				resp += this.Historic[i];		
+		}
+		return resp;
+	}
+
 
 
 }

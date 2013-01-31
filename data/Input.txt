@@ -1,21 +1,31 @@
-JORNADA 1	
-Barcelona	R. Sociedad
-5-1
-Levante	Atlético
-1-1
-Athletic	Betis
-3-5
-Zaragoza	Valladolid
-0-1
-R. Madrid	Valencia
-1-1
-Celta	Málaga
-0-1
-Sevilla	Getafe
-2-1
-Mallorca	Espanyol
-2-1
-Rayo	Granada
-1-0
-Deportivo	Osasuna
-2-0
+JORNADA 22	
+Atlético	Betis
+Dom-
+21:00
+Málaga	Zaragoza
+Dom-
+12:00
+R. Sociedad	Mallorca
+Dom-
+21:00
+Osasuna	Celta
+Sab-
+16:00
+Valencia	Barcelona
+Dom-
+19:00
+Getafe	Deportivo
+Sab-
+18:00
+Granada	R. Madrid
+Sab-
+22:00
+Sevilla	Rayo
+Dom-
+17:00
+Espanyol	Levante
+Sab-
+20:00
+Valladolid	Athletic
+Vie-
+21:00

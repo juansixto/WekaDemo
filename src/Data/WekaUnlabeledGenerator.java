@@ -11,14 +11,14 @@ import Object.Match;
 import Object.Team;
 
 
-public class WekaGenerator {
+public class WekaUnlabeledGenerator {
 
-	String  tFichero = "data/Results2.arff";
+	String  tFichero = "data/ResultsUnlabeled.arff";
 	File  file;
 	PrintWriter  bufferw;
 	List<Team> teams;
 	
-	public WekaGenerator(List<Team> t) throws IOException{
+	public WekaUnlabeledGenerator(List<Team> t) throws IOException{
 		file = new File (tFichero);
 		teams = t;
 		bufferw = new PrintWriter (new FileWriter (file));
@@ -46,7 +46,7 @@ public class WekaGenerator {
 		bufferw.println("@data");
 	}
 
-	public boolean Write(Match m, int s) throws IOException{
+	public boolean Write(Match m) throws IOException{
 		boolean result = false;
 		bufferw.println(makeLine(m));		
 		bufferw.println(makeReverseLine(m));		
@@ -71,9 +71,8 @@ public class WekaGenerator {
 		resp +=vis.getWins()+","+vis.getDraws()+","+vis.getLoses()+",";
 		//resp +=m.getVisitAntecedent();
 		resp += home.getHistoric(5)+",";
-		resp += vis.getHistoric(5)+",";
-		resp +=m.getResult().getSign();	
-		//resp += "?";
+		resp += vis.getHistoric(5)+",";	
+		resp += "?";
 		
 		return resp;
 	}
@@ -98,8 +97,7 @@ public class WekaGenerator {
 		
 		resp += home.getHistoric(5)+",";
 		resp += vis.getHistoric(5)+",";
-		resp +=m.getResult().getReverseSign();
-		//resp += "?";
+		resp += "?";
 		
 		return resp;
 	}

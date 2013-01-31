@@ -36,6 +36,22 @@ public class Match {
 		return visitTeam;
 	}
 
+	public int getHomeAntecedent() {
+		return homeAntecedent;
+	}
+
+	public void setHomeAntecedent(int homeAntecedent) {
+		this.homeAntecedent = homeAntecedent;
+	}
+
+	public int getVisitAntecedent() {
+		return visitAntecedent;
+	}
+
+	public void setVisitAntecedent(int visitAntecedent) {
+		this.visitAntecedent = visitAntecedent;
+	}
+
 	public void setVisitTeam(Team visitTeam) {
 		this.visitTeam = visitTeam;
 	}

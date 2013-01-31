@@ -19,11 +19,12 @@ public class DataMining {
 	
 	private static String FILE = "data/Input.txt";
 	private static String OUTPUT = "data/Output.xml";
-	int num =0;
+	private static String UNLABELED_OUTPUT = "data/UnlabeledOutput.xml";
+	int[] num = new int[20];
 	BufferedReader bf;
-	int[] home = new int[10];
-	int[] visitor = new int[10];
-	String[] result = new String[10];
+	int[][] home = new int[20][12];
+	int[][] visitor = new int[20][12];
+	String[][] result = new String[20][12];
 	FileWriter fichero = null;
     PrintWriter pw = null;
     Seasson seasson ;
@@ -38,22 +39,25 @@ public class DataMining {
 		String sCadena;
 		String[] tokens;
 		int i = 0;
+		int jor = -1;
 
 		while ((sCadena = bf.readLine())!=null) {
 			   if(sCadena.contains("JORNADA")){
+				   jor++;
+				   i=0;
 				   tokens = sCadena.split(" ");
 				   tokens[1] = tokens[1].replace("\t","");
-				   num = Integer.parseInt(tokens[1]);
+				   num[jor] = Integer.parseInt(tokens[1]);
 			   }
 			   else if (sCadena.length()>4){			   
 				   sCadena.replace("\t", "");
 				   tokens = sCadena.split("	");
-				   home[i] = seasson.getTeamId(tokens[0]);
-				   visitor[i] = seasson.getTeamId(tokens[1]);		  			   
+				   home[jor][i] = seasson.getTeamId(tokens[0]);
+				   visitor[jor][i] = seasson.getTeamId(tokens[1]);		  			   
 			   }
 			   else {
 				   sCadena.replace("\t", "");
-				   result[i++] = sCadena;
+				   result[jor][i++] = sCadena;
 			   }
 			   }
 				writeXML();
@@ -62,18 +66,66 @@ public class DataMining {
 		fichero = new FileWriter(OUTPUT);
         pw = new PrintWriter(fichero);
 		//BufferedWriter bw = new BufferedWriter(new FileWriter(OUTPUT));
-		pw.println("<results>"+"\t");
-		pw.print("<season num=\""+num);
-		pw.println("\">"+"\t");
-		for(int i = 0; i<10; i++){
-			pw.println("<games>"+"\t");
-			pw.println("<home>"+home[i]+"</home>"+"\t");
-			pw.println("<visitor>"+visitor[i]+"</visitor>"+"\t");
-			pw.println("<result>"+result[i]+"</result>"+"\t");
-			pw.println("</games>"+"\t");
-		}
-		pw.println("</season>");
-		pw.println("</results>");
+        for(int g=0;g<20;g++){
+			pw.print("<season num=\""+num[g]);
+			pw.println("\">"+"\t");
+			for(int i = 0; i<11; i++){
+				pw.println("<games>"+"\t");
+				pw.println("<home>"+home[g][i]+"</home>"+"\t");
+				pw.println("<visitor>"+visitor[g][i]+"</visitor>"+"\t");
+				pw.println("<result>"+result[g][i]+"</result>"+"\t");
+				pw.println("</games>"+"\t");
+			}
+			pw.println("</season>");
+        }
+		pw.close();
+	}
+	
+	public void ExtractUnlabeled() throws IOException{
+		bf = new BufferedReader(new FileReader(FILE));
+		String sCadena;
+		String[] tokens;
+		int i = 0;
+		int jor = -1;
+
+		while ((sCadena = bf.readLine())!=null) {
+			   if(sCadena.contains("JORNADA")){
+				   jor++;
+				   i=0;
+				   tokens = sCadena.split(" ");
+				   tokens[1] = tokens[1].replace("\t","");
+				   num[jor] = Integer.parseInt(tokens[1]);
+			   }
+			   else if (sCadena.length()>7){			   
+				   sCadena.replace("\t", "");
+				   tokens = sCadena.split("	");
+				   home[jor][i] = seasson.getTeamId(tokens[0]);
+				   visitor[jor][i++] = seasson.getTeamId(tokens[1]);		  			   
+			   }
+			   else {
+				   
+			   }
+			   }
+				writeUnlabeledXML();
+	}
+	public void writeUnlabeledXML() throws IOException{
+		fichero = new FileWriter(UNLABELED_OUTPUT);
+        pw = new PrintWriter(fichero);
+		//BufferedWriter bw = new BufferedWriter(new FileWriter(OUTPUT));
+        pw.println("<results>");
+        for(int g=0;g<1;g++){
+			pw.print("<season num=\""+num[g]);
+			pw.println("\">"+"\t");
+			for(int i = 0; i<11; i++){
+				pw.println("<games>"+"\t");
+				pw.println("<home>"+home[g][i]+"</home>"+"\t");
+				pw.println("<visitor>"+visitor[g][i]+"</visitor>"+"\t");
+				pw.println("<result>"+"?"+"</result>"+"\t");
+				pw.println("</games>"+"\t");
+			}
+			pw.println("</season>");
+        }
+        pw.println("</results>");
 		pw.close();
 	}
 }

@@ -1,9 +1,9 @@
 package Object;
 
 public class MatchResult {
-	private static String HOME = "Home";
-	private static String DRAW = "Draw";	
-	private static String VISITOR = "Visitor";	
+	private static String HOME = "WIN";
+	private static String DRAW = "DRAW";	
+	private static String VISITOR = "LOOSE";	
 	private int goals1 = 0;
 	private int goals2 = 0;
 	private String sign = "X";
